@@ -5,19 +5,21 @@
 Manages installation of applications and configuration of dotfiles.
 
 ## Software
----
 The software installed by either scripts or ansible playbook:
 
 ### Package management
-[Flatpak](https://flatpak.org)
-[Snap](https://snapcraft.io)
+* [Flatpak](https://flatpak.org)
+* [Snap](https://snapcraft.io)
 
 ### Chat clients
-[Slack](https://slack.com)
+* [Slack](https://slack.com)
 
 ### Development tools
-[Ansible](https://www.ansible.com)
----
+* [Ansible](https://www.ansible.com)
+* [Code](https://code.visualstudio.com)
+
+### Music
+* [Spotify](https://www.spotify.com)
 ## New Machine Setup
 For a new machine, I run the following command to set up my computer
 
