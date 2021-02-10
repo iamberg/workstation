@@ -1,3 +1,15 @@
-# local env files
+# Local env files
 .env.local
 .env.*.local
+
+# Private inventory file
+.inventory
+
+# Private group_vars
+group_vars/*
+# Don't ignore public group_vars
+!group_vars/all/
+
+.idea
+.vscode
+*.sw?

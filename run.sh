@@ -1,8 +1,10 @@
 #!/bin/bash
 
+## Update and install requirements
 sudo apt update 
 sudo apt install -y git make
 
+# Setup local repository
 FOLDER=projects/personal
 GIT_USER=iamberg
 GIT_REPO=workstation
@@ -22,3 +24,8 @@ sudo chown -R "$USER:$USER" $GIT_REPO
 sudo chmod -R 755 $GIT_REPO
 
 cd $GIT_REPO || exit
+
+
+## bootstrap
+
+

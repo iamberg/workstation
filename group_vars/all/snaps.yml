@@ -1,0 +1,7 @@
+---
+snaps_common:
+  - name: "snap-store"
+  - name: "spotify"
+snaps_development:
+  - name: "code"
+    classic: "yes"

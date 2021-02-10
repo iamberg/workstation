@@ -1,0 +1,22 @@
+---
+code_extensions:
+  ## Ansible
+  - vscoss.vscode-ansible
+
+  ## Atlassian
+  - atlassian.atlascode
+
+  ## Cloud
+  - amazonwebservices.aws-toolkit-vscode
+
+  ## Themes
+  - akamud.vscode-theme-onedark
+  - vscode-icons-team.vscode-icons
+
+  ## VCS
+  - eamodio.gitlens
+  - donjayamanne.githistory
+  - mhutchie.git-graph
+
+  ## YAML
+  - redhat.vscode-yaml
