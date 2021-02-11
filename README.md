@@ -16,7 +16,10 @@ The software installed by either scripts or ansible playbook:
 
 ### Development tools
 * [Ansible](https://www.ansible.com)
-* [Code](https://code.visualstudio.com)
+* [AWS Cli](https://aws.amazon.com/cli/)
+* [docker](https://www.docker.com)
+* docker-compose
+* [VS Code](https://code.visualstudio.com)
 
 ### Music
 * [Spotify](https://www.spotify.com)

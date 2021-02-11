@@ -1,0 +1,22 @@
+---
+- name: AWS cli - Download installer
+  unarchive:
+    src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+    dest: "{{ executable_temp_dir | default('/tmp') }}"
+    remote_src: yes
+    creates: /tmp/aws
+    mode: 0755
+
+- name: AWS cli - Install
+  command:
+  args:
+    cmd: "{{ executable_temp_dir | default('/tmp') }}/aws/install"
+    creates: /usr/local/bin/aws
+  become: true
+  register: aws_install
+
+- name: AWS cli - Installer output
+  debug:
+    var: aws_install
+    verbosity: 2
+    

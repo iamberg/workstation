@@ -11,3 +11,6 @@
     - role: docker
       tags:
         - docker
+    - role: aws-cli
+      tags:
+        - aws-cli
