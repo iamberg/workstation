@@ -1,8 +1,5 @@
 ---
 code_extensions:
-  ## Ansible
-  - vscoss.vscode-ansible
-
   ## Atlassian
   - atlassian.atlascode
 

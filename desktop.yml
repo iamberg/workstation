@@ -2,5 +2,12 @@
 - hosts: localhost
   connection: local
   roles:
-    - {role: flatpak, tags: ['flatpak']}
-    - {role: development-tools, tags: ['development-tools']}
+    - role: flatpak
+      tags:
+        - flatpak
+    - role: development-tools
+      tags: 
+        - development-tools
+    - role: docker
+      tags:
+        - docker
