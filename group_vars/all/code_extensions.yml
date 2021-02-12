@@ -6,6 +6,10 @@ code_extensions:
   ## Cloud
   - amazonwebservices.aws-toolkit-vscode
 
+  ## Python
+  - ms-python.python
+  - wholroyd.jinja
+
   ## Themes
   - akamud.vscode-theme-onedark
   - vscode-icons-team.vscode-icons

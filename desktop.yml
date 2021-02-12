@@ -17,3 +17,6 @@
     - role: apt
       tags:
         - apt
+    - role: node-js
+      tags:
+        - node-js
