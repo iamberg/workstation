@@ -6,7 +6,7 @@
       tags:
         - flatpak
     - role: development-tools
-      tags: 
+      tags:
         - development-tools
     - role: docker
       tags:

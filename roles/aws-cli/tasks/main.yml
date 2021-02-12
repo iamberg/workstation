@@ -3,7 +3,7 @@
   unarchive:
     src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
     dest: "{{ executable_temp_dir | default('/tmp') }}"
-    remote_src: yes
+    remote_src: "yes"
     creates: /tmp/aws
     mode: 0755
 
@@ -19,4 +19,3 @@
   debug:
     var: aws_install
     verbosity: 2
-    
