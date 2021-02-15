@@ -20,3 +20,6 @@
     - role: node-js
       tags:
         - node-js
+    - role: zsh
+      tags:
+        - zsh

@@ -1,0 +1,9 @@
+---
+- name: ZSH - install zsh
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - git
+    - zsh
