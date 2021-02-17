@@ -19,6 +19,7 @@ The software installed by either scripts or ansible playbook:
 * [AWS Cli](https://aws.amazon.com/cli/)
 * [docker](https://www.docker.com)
 * docker-compose
+* [Node.js](https://nodejs.org)
 * [VS Code](https://code.visualstudio.com)
 
 ### Music

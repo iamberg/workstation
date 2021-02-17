@@ -23,3 +23,9 @@
     - role: zsh
       tags:
         - zsh
+    - role: common-snaps
+      tags:
+        - common-snaps
+    - role: dot-files
+      tags:
+        - dot-files

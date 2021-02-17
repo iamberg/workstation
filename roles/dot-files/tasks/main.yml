@@ -1,0 +1,22 @@
+---
+- name: chezmoi - Install
+  become: true
+  snap:
+    name: chezmoi
+    channel: stable
+    classic: yes
+    state: present
+
+- name: chezmoi - Check if chezmoi is initialized
+  stat:
+    path: /home/{{ ansible_user }}/.local/share/chezmoi
+  register: chezmoi_register
+
+- name: chezmoi - Initialize
+  shell: chezmoi init {{ dot_files_repository_url }}
+  when: not chezmoi_register.stat.exists
+
+- name: chezmoi - Debug
+  debug:
+    msg: "Directory exists"
+  when: chezmoi_register.stat.exists
