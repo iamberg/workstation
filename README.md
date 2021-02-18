@@ -24,6 +24,14 @@ The software installed by either scripts or ansible playbook:
 
 ### Music
 * [Spotify](https://www.spotify.com)
+
+### Dotfiles management
+* [chezmoi](https://github.com/twpayne/chezmoi)
+## Dotfiles
+I manage my dotfiles with [chezmoi](https://github.com/twpayne/chezmoi) since it has integrations with password managers and supports gpg encryption.
+
+Running the Ansible playbook will install chezmoi and initialize from my dotfiles repository at [https://github.com/iamberg/dotfiles](https://github.com/iamberg/dotfiles)
+
 ## New Machine Setup
 For a new machine, I run the following command to set up my computer
 

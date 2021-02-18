@@ -26,6 +26,6 @@
     - role: common-snaps
       tags:
         - common-snaps
-    - role: dot-files
+    - role: dotfiles
       tags:
-        - dot-files
+        - dotfiles

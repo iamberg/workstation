@@ -14,7 +14,7 @@
 
 - name: chezmoi - Initialize
   shell: chezmoi init {{ dot_files_repository_url }}
-  when: not chezmoi_register.stat.exists
+  when: not chezmoi_register.stat.exists and dot_files_repository_url is defined
 
 - name: chezmoi - Debug
   debug:
