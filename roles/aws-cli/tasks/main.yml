@@ -4,7 +4,7 @@
     src: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
     dest: "{{ executable_temp_dir | default('/tmp') }}"
     remote_src: "yes"
-    creates: /tmp/aws
+    creates: "{{ executable_temp_dir | default('/tmp') }}/aws"
     mode: 0755
 
 - name: AWS cli - Install
@@ -18,4 +18,30 @@
 - name: AWS cli - Installer output
   debug:
     var: aws_install
+    verbosity: 2
+
+- name: AWS SAM cli - Create temp directory for unpacking
+  file:
+    path: "{{ executable_temp_dir | default('/tmp') }}/aws-sam-cli"
+    state: directory
+
+- name: AWS SAM cli - Download
+  unarchive:
+    src: https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip
+    dest: "{{ executable_temp_dir | default('/tmp') }}/aws-sam-cli"
+    remote_src: "yes"
+    creates: "{{ executable_temp_dir | default('/tmp') }}/aws-sam-cli/install"
+    mode: 0755
+
+- name: AWS SAM cli - Install
+  command:
+  args:
+    cmd: "{{ executable_temp_dir | default('/tmp') }}/aws-sam-cli/install"
+    creates: /usr/local/bin/sam
+  become: true
+  register: aws_sam_install
+
+- name: AWS SAM cli - Installer output
+  debug:
+    var: aws_sam_install
     verbosity: 2
