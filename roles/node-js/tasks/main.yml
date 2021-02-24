@@ -3,76 +3,16 @@
   become: true
   apt:
     name:
-      - apt-transport-https
-      - gnupg2
+      - git
+      - curl
+      - build-essential
+      - libssl-dev
     state: present
 
-- name: NodeJS - Add nodesource apt key
-  become: true
-  apt_key:
-    url: >
-      https://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x1655A0AB68576280
-    id: "68576280"
-    state: present
+- include: nvm.yml
 
-- name: NodeJS - Add nodesource repositories for node.js
-  become: true
-  apt_repository:
-    repo: "{{ item }}"
-    state: present
-  loop:
-    - deb https://deb.nodesource.com/node_{{ nodejs_version }} {{ ansible_distribution_release }} main
-    - deb-src https://deb.nodesource.com/node_{{ nodejs_version }} {{ ansible_distribution_release }} main
-  register: node_repo
+- include: node.yml
 
-- name: NodeJS - Update apt cache if repo was added
-  become: true
-  apt: update_cache=yes
-  when: node_repo.changed
-  tags: ['skip_ansible_lint']
+- include: verify.yml
 
-- name: NodeJS - Ensure node.js is installed.
-  become: true
-  apt:
-    name: nodejs
-    state: present
-
-- name: NodeJS - Define nodejs_install_user
-  set_fact:
-    nodejs_install_npm_user: "{{ ansible_user | default(lookup('env', 'USER')) }}"
-  when: nodejs_istall_user is not defined
-  tags: ['skip_ansible_lint']
-
-- name: NodeJS - Create npm global directory
-  become: true
-  file:
-    path: "{{ npm_config_prefix }}"
-    owner: "{{ nodejs_install_npm_user }}"
-    group: "{{ nodejs_install_npm_user }}"
-    state: directory
-    mode: 0755
-
-- name: NodeJS - Add npm_config_prefix bin directory to global $PATH
-  become: true
-  template:
-    src: npm.sh.j2
-    dest: /etc/profile.d/npm.sh
-    mode: 0644
-
-- name: NodeJS - Reload PATH
-  become: true
-  shell:
-    cmd: ". /etc/profile"
-
-- name: NodeJS - Install global packages if missing
-  npm:
-    name: "{{ item.name | default(item) }}"
-    version: "{{ item.version | default('latest') }}"
-    global: true
-    state: latest
-  environment:
-    NPM_CONFIG_PREFIX: "{{ npm_config_prefix }}"
-    NODE_PATH: "{{ npm_config_prefix }}/lib/node_modules"
-    NPM_CONFIG_UNSAFE_PERM: "{{ npm_config_unsafe_perm }}"
-  with_items: "{{ nodejs_npm_global_packages }}"
-  tags: ['skip_ansible_lint']
+- include: npm-packages.yml

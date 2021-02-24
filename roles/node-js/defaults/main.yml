@@ -6,3 +6,11 @@ nodejs_npm_global_packages:
 
 npm_config_prefix: "/usr/local/lib/npm"
 npm_config_unsafe_perm: "false"
+
+nvm_version: 'latest'
+nvm_node_version: 'lts'
+nvm_install_path: ~/.nvm
+nvm_shell_init_file: ~/.profile
+
+nvm_force_install: false
+nvm_install_deps: true

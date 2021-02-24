@@ -16,9 +16,12 @@ The software installed by either scripts or ansible playbook:
 
 ### Development tools
 * [Ansible](https://www.ansible.com)
-* [AWS Cli](https://aws.amazon.com/cli/)
+* [AWS cli](https://aws.amazon.com/cli/)
+* AWS SAM cli
+* [AWS CDK](https://aws.amazon.com/cdk/)
 * [docker](https://www.docker.com)
 * docker-compose
+* [nvm](https://github.com/nvm-sh/nvm)
 * [Node.js](https://nodejs.org)
 * [VS Code](https://code.visualstudio.com)
 
