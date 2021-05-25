@@ -3,6 +3,7 @@ nodejs_version: "14.x"
 
 nodejs_npm_global_packages:
   - name: aws-cdk
+  - name: npmrc
 
 npm_config_prefix: "/usr/local/lib/npm"
 npm_config_unsafe_perm: "false"
