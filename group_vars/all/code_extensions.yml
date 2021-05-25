@@ -21,3 +21,6 @@ code_extensions:
 
   ## YAML
   - redhat.vscode-yaml
+
+  ## Vue.js
+  - octref.vetur
