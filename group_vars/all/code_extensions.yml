@@ -24,3 +24,6 @@ code_extensions:
 
   ## Vue.js
   - octref.vetur
+
+  ## Editor Config
+  - editorconfig.editorconfig
