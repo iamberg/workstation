@@ -27,3 +27,6 @@ code_extensions:
 
   ## Editor Config
   - editorconfig.editorconfig
+
+  ## Hugo
+  - eliostruyf.vscode-front-matter
