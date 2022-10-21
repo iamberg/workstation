@@ -30,3 +30,6 @@ code_extensions:
 
   ## Hugo
   - eliostruyf.vscode-front-matter
+
+  ## Docker
+  - ms-azuretools.vscode-docker
